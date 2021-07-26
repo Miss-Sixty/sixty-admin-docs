@@ -1,14 +1,12 @@
 # 权限验证
 
-请在框架配置里设置 `openPermission: true` 开启权限功能。
-
 ## 路由权限
 
 在路由的 `meta` 配置项中，其中有一个 `auth` 参数，这个就是用来配置路由的权限，一个路由可以配置多个权限，当配置多个权限时，只要满足其中任何一个，则视为用户有访问该路由的权限，如下：
 
 ```js
 meta: {
-    auth: ['news.browse', 'news.edit']
+  auth: ["news.browse", "news.edit"];
 }
 ```
 
@@ -30,26 +28,20 @@ meta: {
 ```html
 <!-- 单权限验证 -->
 <Auth :value="'department.create'">
-    你有该权限
-    <template slot="no-auth">
-        你没有该权限
-    </template>
+  你有该权限
+  <template slot="no-auth"> 你没有该权限 </template>
 </Auth>
 
 <!-- 多权限验证，用户只要具备其中任何一个权限，则验证通过 -->
 <Auth :value="['department.create', 'department.edit']">
-    你有该权限
-    <template slot="no-auth">
-        你没有该权限
-    </template>
+  你有该权限
+  <template slot="no-auth"> 你没有该权限 </template>
 </Auth>
 
 <!-- 多权限验证，用户必须具备全部权限，才验证通过 -->
 <AuthAll :value="['department.create', 'department.edit']">
-    你有该权限
-    <template slot="no-auth">
-        你没有该权限
-    </template>
+  你有该权限
+  <template slot="no-auth"> 你没有该权限 </template>
 </AuthAll>
 ```
 
@@ -74,37 +66,14 @@ meta: {
 
 ```js
 // 单权限验证，返回 true 或 false
-this.$auth('department.create')
+this.$auth("department.create");
 
 // 多权限验证，用户只要具备其中任何一个权限，则验证通过，返回 true 或 false
-this.$auth(['department.create', 'department.edit'])
+this.$auth(["department.create", "department.edit"]);
 
 // 多权限验证，用户必须具备全部权限，才验证通过，返回 true 或 false
-this.$authAll(['department.create', 'department.edit'])
+this.$authAll(["department.create", "department.edit"]);
 ```
-
-## 演示
-
-在 `src/store/modules/user.js` 文件里 action 下有个 `getPermissions` 的方法，在实际项目开发中，记得修改该方法。
-
-```js
-// 获取我的权限
-getPermissions({state, commit}) {
-    return new Promise(resolve => {
-        // 通过 mock 获取权限
-        api.get('mock/member/permission', {
-            params: {
-                account: state.account
-            }
-        }).then(res => {
-            commit('setPermissions', res.data.permissions)
-            resolve(res.data.permissions)
-        })
-    })
-}
-```
-
-在框架演示中，提供了两组权限，你可以在“权限验证”栏目里切换帐号查看不同权限下的效果。如果使用其它用户名登录，则看不到“权限验证”模块。
 
 ## 小技巧
 
@@ -113,49 +82,52 @@ getPermissions({state, commit}) {
 当然了，业务有大有小，针对一些小型的管理系统，对权限这块没有这么多复杂的要求，甚至什么角色拥有什么权限都是写死固定的，不需要自由配置。针对这种情况，也可以很方便的实现。
 
 ```js
-import Layout from '@/layout'
+import Layout from "@/layout";
 
 export default {
-    path: '/banner',
-    component: Layout,
-    redirect: '/banner/list',
-    name: 'banner',
-    meta: {
-        title: 'Banner 管理',
-        icon: 'banner',
-        auth: ['admin', 'editor']
+  path: "/banner",
+  component: Layout,
+  redirect: "/banner/list",
+  name: "banner",
+  meta: {
+    title: "Banner 管理",
+    icon: "banner",
+    auth: ["admin", "editor"],
+  },
+  children: [
+    {
+      path: "detail",
+      name: "bannerCreate",
+      component: () =>
+        import(/* webpackChunkName: 'banner' */ "@/views/banner/detail"),
+      meta: {
+        title: "新增 Banner",
+        auth: ["admin", "editor"],
+      },
     },
-    children: [
-        {
-            path: 'detail',
-            name: 'bannerCreate',
-            component: () => import(/* webpackChunkName: 'banner' */ '@/views/banner/detail'),
-            meta: {
-                title: '新增 Banner',
-                auth: ['admin', 'editor']
-            }
-        },
-        {
-            path: 'list',
-            name: 'bannerList',
-            component: () => import(/* webpackChunkName: 'banner' */ '@/views/banner/list'),
-            meta: {
-                title: 'Banner 列表',
-                auth: ['admin']
-            }
-        },
-        {
-            path: 'detail/:id',
-            name: 'bannerEdit',
-            component: () => import(/* webpackChunkName: 'banner' */ '@/views/banner/detail'),
-            meta: {
-                title: '编辑 Banner',
-                auth: ['admin'],
-                sidebar: false
-            }
-        }
-    ]
-}
+    {
+      path: "list",
+      name: "bannerList",
+      component: () =>
+        import(/* webpackChunkName: 'banner' */ "@/views/banner/list"),
+      meta: {
+        title: "Banner 列表",
+        auth: ["admin"],
+      },
+    },
+    {
+      path: "detail/:id",
+      name: "bannerEdit",
+      component: () =>
+        import(/* webpackChunkName: 'banner' */ "@/views/banner/detail"),
+      meta: {
+        title: "编辑 Banner",
+        auth: ["admin"],
+        sidebar: false,
+      },
+    },
+  ],
+};
 ```
 
 如上所示，假设有 2 种角色，一个是管理员 `admin` ，一个是编辑员 `editor` ，如果用户是 `admin` 权限，则可以操作 Banner 管理下的所有功能，如果是 `editor` 权限，则只能进行新增 Banner 操作。

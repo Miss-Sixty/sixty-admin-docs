@@ -2,13 +2,33 @@
 
 ## 图标
 
-本框架提供了 SVG 图标支持，方便使用。推荐去[阿里巴巴矢量图标库](https://www.iconfont.cn/)下载高质量 SVG 图标。
+本项目提供了 SVG 图标的支持，推荐去[阿里巴巴矢量图标库](https://www.iconfont.cn/)下载高质量 SVG 图标。
 
 要使用 SVG 图标也很简单，首先将 svg 文件放到 `@/icons/svg` 目录下，然后在页面中就可以通过 `<svg-icon />` 组件使用了，name 就是 svg 文件名，如下：
 
 ```html
-<svg-icon name="example" />
+<svg-icon name="斑马" />
 ```
+
+另外，如果系统安装了 [sketch](https://www.sketch.com/) ，那么项目也提供了自动导入 sketch 中的所有图标的[方法](https://developer.sketch.com/cli/export-assets)。只需将 sketch 文件放入到 `@/assets/sketch` 中，执行命令：
+<CodeGroup>
+<CodeGroupItem title="YARN" active>
+
+```bash
+yarn export:svg
+```
+
+</CodeGroupItem>
+  <CodeGroupItem title="NPM" >
+
+```bash
+npm run export:svg
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+就会在 `@icons/sketchSvg` 文件夹中自动生成所有的 sketch 图标。
 
 ## 图片
 

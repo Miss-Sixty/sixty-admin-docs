@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d docs/.vuepress/dist"
   },
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.22",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "vuepress": "^2.0.0-beta.22"
   }
 }

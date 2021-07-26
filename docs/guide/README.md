@@ -1,14 +1,14 @@
 # 项目说明
 
 ::: warning ⭐⭐⭐⭐⭐
-因该项目所使用的技术栈和语法大多数都刚发布或刚定稿，缺少一定的稳定性且参有不确定的 bug，故不建议在公司项目中使用。
+因该项目所使用的技术栈和语法大多数都发布不久或刚定稿，缺少一定的稳定性且参有不确定的 bug，故不建议在公司项目中使用。
 :::
 
-# 介绍
+## 介绍
 
-Sixty-Admin 是基于 Vue3 和 Element Plus 的中后台管理系统
+Sixty-Admin 是基于 Vue3 和 Element Plus 的中后台管理系统。
 
-# 前序准备
+## 前序准备
 
 你需要在本地安装 node 和 git。本项目技术栈基于 ES2015+、Vue3、Vuex、Vue-router、Vue-cli、axios 和 Element Plus ，了解这些知识会使你在开发项目时轻松许多。
 

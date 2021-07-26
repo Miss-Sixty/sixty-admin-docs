@@ -34,30 +34,30 @@ lrr-pc-admin 所有全局样式都在 @/src/css 目录下设置
 
 ```sh
 ├── styles
-│   ├── iview-ui.scss            # 全局自定义 iview-ui 样式
-│   ├── index.scss               # 全局通用样式
-│   ├── transition.scss          # vue transition 动画
-│   └── var.scss                 # 全局变量
+│   ├── resources           # 自动加载全局 scss
+│       ├── mixins.scss     # scss 方法
+│       ├── var.scss        # 自定义变量
+│   ├── element.scss        # element 样式
+│   └── index.scss          # 覆盖标签默认样式
 ```
 
 常见的工作流程是，全局样式都写在 src/styles 目录下，每个页面自己对应的样式都写在自己的 .vue 文件之中
 
-```css
+```html
 <style>
-/* global styles */
+  /* global styles */
 </style>
 
 <style scoped>
-/* local styles */
+  /* local styles */
 </style>
 ```
 
-<!--
 ## 自定义 element-ui 样式
 
 由于 element-ui 的样式我们是在全局引入的，所以你想在某个页面里面覆盖它的样式就不能加 scoped，但你又想只覆盖这个页面的 element 样式。这里提供两种修改方式
 
-- 第一种 你可以在它的父级加一个 class，用命名空间来解决问题（不加 scoped）。
+- 第一种 你可以在它的父级加一个 class ，用命名空间来解决问题（不加 scoped）。
 
 ```css
 .article-page {
@@ -69,11 +69,11 @@ lrr-pc-admin 所有全局样式都在 @/src/css 目录下设置
 }
 ```
 
-- 第二种 可以使用`::v-deep`来解决问题（添加 scoped）。
+- 第二种 可以使用 `deep` 来解决问题（添加 scoped）。
 
-```css
-::v-deep.el-tag {
+```scss
+::v-deep(.el-tag) {
   /* element-ui 元素*/
   margin-right: 0px;
 }
-``` -->
+```
