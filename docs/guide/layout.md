@@ -4,4 +4,4 @@
 
 ## Home
 
-silversea_Admin_v3 中大部分页面都是基于这个 src/layout/ 的，除了个别页面如：login、详情页、404、401 等页面没有使用该 layout。
+Sixty-Admin 中大部分页面都是基于这个 `@/layout/` 的，除了个别页面如：login、详情页、404 等页面没有使用该 `layout`。
