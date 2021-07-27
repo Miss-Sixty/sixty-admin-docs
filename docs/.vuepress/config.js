@@ -13,7 +13,7 @@ module.exports = {
     sidebar: {
       "/guide/": [
         {
-          text: "基础",
+          text: "指南",
           children: [
             "/guide/todo.md",
             "/guide/README.md",
@@ -33,19 +33,31 @@ module.exports = {
       ],
       "/components/": [
         {
+          text: "介绍",
+          link: "/components/",
+        },
+        {
           text: "组件",
-          children: [
-            "/components/README.md",
-            "/components/watermark.md",
-            "/components/pagination.md",
-          ],
+          children: ["/components/watermark.md", "/components/pagination.md"],
         },
       ],
     },
-    lastUpdatedText: "最后更新",
+    lastUpdatedText: "上次更新",
     contributorsText: "贡献者",
     editLinkText: "在 GitHub 上编辑此页",
     docsRepo: "https://github.com/Miss-Sixty/sixty-admin-docs",
     docsDir: "docs",
+    tip: "提示",
+    warning: "注意",
+    danger: "警告",
+    notFound: [
+      "这里什么都没有",
+      "我们怎么到这来了？",
+      "这是一个 404 页面",
+      "看起来我们进入了错误的链接",
+    ],
+    backToHome: "返回首页",
+    openInNewWindow: "在新窗口打开",
+    toggleDarkMode: "切换夜间模式",
   },
 };
