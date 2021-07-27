@@ -38,6 +38,10 @@ module.exports = {
         },
       ],
     },
-    editLink: false,
+    lastUpdatedText: "最后更新",
+    contributorsText: "贡献者",
+    editLinkText: "在 GitHub 上编辑此页",
+    docsRepo: "https://github.com/Miss-Sixty/sixty-admin-docs",
+    docsDir: "docs",
   },
 };
