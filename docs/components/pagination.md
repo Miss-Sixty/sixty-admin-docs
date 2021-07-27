@@ -1,60 +1,42 @@
 # 分页
 
-<img :src="$withBase('/imgs/1615969386362.jpg')">
+<img :src="$withBase('/imgs/pagination.png')">
 
-## 引入
+## 说明
 
-```vue
-<script>
-import Pagination from "@/components/Pagination";
-export default {
-  components: {
-    Pagination
-  }
-};
-</script>
-```
+二次封装 Pagination 组件，数据的分页控制，多和表格配合使用。
 
-## 使用方法
-
-`total`为数据总条数，为后端返回的数据，不可随意设置。`page.sync`为第几页，`size`为每页条数，可根据需要自由设置。
+## 代码演示
 
 ```vue
 <template>
-  <pagination
-    :page.sync="paginate.current_page"
-    :total="paginate.total"
-    :size="paginate.page_size"
+  <six-pagination
+    v-model:pageSize="tableData.pageSize"
+    v-model:currentPage="tableData.currentPage"
+    :total="tableData.total"
     @on-change="getListData"
   />
 </template>
-
-<script>
-data(){
-  return{
-     //分页
-      paginate: {
-        total: 0, //总数量
-        current_page: 1, //当前页码
-        page_size: 10 //每页数量
-      },
-  }
-}
+<script setup>
+import { reactive } from "vue";
+const tableData = reactive({
+  pageSize: 10, //每页数量
+  total: 0, //总条数
+  currentPage: 1, //当前页
+});
 </script>
 ```
 
-## API
+## Props
 
-### Props
+| 参数        | 说明             | 类型   | 默认值 |
+| ----------- | ---------------- | ------ | ------ |
+| pageSize    | 每页显示条目个数 | number | -      |
+| total       | 总条目数         | number | -      |
+| currentPage | 当前页数         | number | -      |
 
-| 参数      | 说明       | 类型   | 默认值 |
-| --------- | ---------- | ------ | ------ |
-| total     | 数据总条数 | number | 0      |
-| page.sync | 第几页     | number | 1      |
-| size      | 每页几条   | number | 10     |
+## Events
 
-### Events
-
-| 事件名    | 说明         | 回调参数       |
-| --------- | ------------ | -------------- |
-| on-change | 页数改变触发 | _event: Event_ |
+| 参数      | 说明                         | 默认值 |
+| --------- | ---------------------------- | ------ |
+| on-change | 每页条数或当前页改变时会触发 | -      |
