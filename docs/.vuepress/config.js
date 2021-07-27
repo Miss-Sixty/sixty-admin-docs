@@ -40,6 +40,7 @@ module.exports = {
           text: "组件",
           children: [
             "/components/pageHeader.md",
+            "/components/fixedActionBar.md",
             "/components/watermark.md",
             "/components/pagination.md",
           ],
