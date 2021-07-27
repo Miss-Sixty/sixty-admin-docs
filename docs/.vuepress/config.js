@@ -41,6 +41,7 @@ module.exports = {
           children: [
             "/components/pageHeader.md",
             "/components/fixedActionBar.md",
+            "/components/confirmSwitch.md",
             "/components/watermark.md",
             "/components/pagination.md",
           ],
