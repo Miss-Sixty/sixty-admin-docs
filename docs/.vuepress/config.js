@@ -38,7 +38,11 @@ module.exports = {
         },
         {
           text: "组件",
-          children: ["/components/watermark.md", "/components/pagination.md"],
+          children: [
+            "/components/pageHeader.md",
+            "/components/watermark.md",
+            "/components/pagination.md",
+          ],
         },
       ],
     },
