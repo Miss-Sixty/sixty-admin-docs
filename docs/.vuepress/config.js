@@ -34,7 +34,11 @@ module.exports = {
       "/components/": [
         {
           text: "组件",
-          children: ["/components/README.md", "/components/pagination.md"],
+          children: [
+            "/components/README.md",
+            "/components/watermark.md",
+            "/components/pagination.md",
+          ],
         },
       ],
     },
