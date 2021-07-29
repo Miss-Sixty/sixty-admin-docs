@@ -61,6 +61,7 @@ module.exports = {
             "/hooks/toRouter.md",
             "/hooks/dialogVisible.md",
             "/hooks/messageBoxChange.md",
+            "/hooks/validateForm.md",
           ],
         },
       ],
