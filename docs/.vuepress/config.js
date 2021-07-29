@@ -60,6 +60,7 @@ module.exports = {
             "/hooks/useWindowResize.md",
             "/hooks/toRouter.md",
             "/hooks/dialogVisible.md",
+            "/hooks/messageBoxChange.md",
           ],
         },
       ],
