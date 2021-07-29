@@ -59,6 +59,7 @@ module.exports = {
             "/hooks/officeSrc.md",
             "/hooks/useWindowResize.md",
             "/hooks/toRouter.md",
+            "/hooks/dialogVisible.md",
           ],
         },
       ],
