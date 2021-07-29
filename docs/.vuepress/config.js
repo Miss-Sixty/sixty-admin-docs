@@ -62,6 +62,7 @@ module.exports = {
             "/hooks/dialogVisible.md",
             "/hooks/messageBoxChange.md",
             "/hooks/validateForm.md",
+            "/hooks/forInData.md",
           ],
         },
       ],
