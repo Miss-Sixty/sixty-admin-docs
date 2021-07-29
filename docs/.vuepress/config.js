@@ -55,7 +55,7 @@ module.exports = {
         },
         {
           text: "钩子函数",
-          children: ["/hooks/officeSrc.md"],
+          children: ["/hooks/officeSrc.md", "/hooks/useWindowResize.md"],
         },
       ],
     },
