@@ -7,6 +7,7 @@ module.exports = {
     navbar: [
       { text: "指南", link: "/guide/" },
       { text: "组件", link: "/components/" },
+      { text: "钩子函数", link: "/hooks/" },
       { text: "项目演示", link: "https://miss-sixty.github.io/sixty-admin/" },
     ],
     repo: "https://github.com/Miss-Sixty/sixty-admin",
@@ -45,6 +46,16 @@ module.exports = {
             "/components/watermark.md",
             "/components/pagination.md",
           ],
+        },
+      ],
+      "/hooks/": [
+        {
+          text: "介绍",
+          link: "/hooks/",
+        },
+        {
+          text: "钩子函数",
+          children: ["/hooks/officeSrc.md"],
         },
       ],
     },
