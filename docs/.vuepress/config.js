@@ -45,7 +45,7 @@ module.exports = {
             "/components/confirmSwitch.md",
             "/components/watermark.md",
             "/components/pagination.md",
-            "/components/imgUpload.md",
+            "/components/imgsUpload.md",
           ],
         },
       ],
