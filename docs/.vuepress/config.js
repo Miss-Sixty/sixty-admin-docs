@@ -46,6 +46,7 @@ module.exports = {
             "/components/watermark.md",
             "/components/pagination.md",
             "/components/imgsUpload.md",
+            "/components/fileUpload.md",
           ],
         },
       ],
