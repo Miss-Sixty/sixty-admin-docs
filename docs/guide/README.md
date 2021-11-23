@@ -10,7 +10,7 @@ Sixty-Admin 是基于 Vue3 和 Element Plus 的中后台管理系统。
 
 ## 前序准备
 
-你需要在本地安装 node 和 git。本项目技术栈基于 ES2015+、Vue3、Vuex、Vue-router、Vue-cli、axios 和 Element Plus ，了解这些知识会使你在开发项目时轻松许多。
+你需要在本地安装 node 和 git。本项目技术栈基于 ES2015+、Vue3、Vue-router、Vite、Pinia、axios 和 Element Plus ，了解这些知识会使你在开发项目时轻松许多。
 
 ## 目录结构
 
@@ -66,6 +66,13 @@ cd sixty-admin
 - **步骤 3**: 安装依赖
 
 <CodeGroup>
+      <CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install
+```
+
+  </CodeGroupItem>
   <CodeGroupItem title="YARN" active>
 
 ```bash
@@ -85,17 +92,24 @@ npm install
 - **步骤 4**: 启动项目
 
 <CodeGroup>
+    <CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm dev
+```
+
+  </CodeGroupItem>
   <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn serve
+yarn dev
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="NPM">
 
 ```bash
-npm run serve
+npm run dev
 ```
 
   </CodeGroupItem>
